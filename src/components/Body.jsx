@@ -6,7 +6,7 @@ const socialLinks = [
     icon: GithubIcon,
     href: 'https://github.com/Leoul-Z',
     label: 'GitHub',
-    color: '#ffffff'
+    color: '#0F172A'
   },
   {
     icon: LinkedinIcon,
@@ -62,7 +62,7 @@ const iconVariants = {
 
 function Body() {
   return (
-    <section id="home" className="min-h-[90vh] flex items-center justify-center py-20 md:py-32 relative overflow-hidden bg-bg-dark">
+    <section id="home" className="min-h-[90vh] flex items-center justify-center py-20 md:py-32 relative overflow-hidden bg-bg-main">
       <motion.div
         variants={containerVariants}
         initial="hidden"
@@ -178,19 +178,11 @@ function Body() {
         </motion.div>
 
         <div className="w-full md:w-1/2 flex flex-col items-center md:items-start text-center md:text-left">
-          <motion.div variants={itemVariants}>
-            <motion.span
-              className="inline-block text-xs font-bold uppercase tracking-[0.3em] text-neon-cyan mb-4 px-3 py-1 border border-neon-cyan/20 rounded-full bg-neon-cyan/5"
-              animate={{ opacity: [0.7, 1, 0.7] }}
-              transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
-            >
-              Available for work
-            </motion.span>
-          </motion.div>
+         
 
           <motion.h1
             variants={itemVariants}
-            className="text-4xl md:text-6xl font-extrabold tracking-tight text-white mb-2"
+            className="text-4xl md:text-6xl font-extrabold tracking-tight text-primary-accent mb-2"
           >
             Hi, I'm Leoul<span className="text-neon-cyan font-black">.</span>
           </motion.h1>
@@ -199,13 +191,13 @@ function Body() {
             variants={itemVariants}
             className="text-3xl md:text-5xl font-bold tracking-tight mb-6"
           >
-            <span className="text-white">Software </span>
-            <span className="text-muted-gray">Engineer</span>
+            <span className="text-primary-accent">Software </span>
+            <span className="text-text-muted">Engineer</span>
           </motion.h2>
 
           <motion.p
             variants={itemVariants}
-            className="text-muted-gray text-sm md:text-base leading-relaxed max-w-md mb-8"
+            className="text-text-muted text-sm md:text-base leading-relaxed max-w-md mb-8"
           >
             Building clean, performant, and visually compelling digital experiences — from pixel-perfect UIs to scalable backends.
           </motion.p>
@@ -228,7 +220,7 @@ function Body() {
                   boxShadow: `0 8px 25px ${color}30`
                 }}
                 whileTap={{ scale: 0.95 }}
-                className="relative group flex items-center justify-center w-11 h-11 rounded-xl border border-white/8 bg-white/4 text-slate-400 hover:text-white transition-all duration-300 overflow-hidden"
+                className="relative group flex items-center justify-center w-11 h-11 rounded-xl border border-secondary-muted bg-bg-surface text-text-muted hover:text-primary-accent transition-all duration-300 overflow-hidden"
                 style={{
                   '--icon-color': color
                 }}
@@ -245,7 +237,7 @@ function Body() {
                   <Icon size={20} />
                 </span>
 
-                <span className="absolute -top-9 left-1/2 -translate-x-1/2 text-[10px] font-semibold bg-[#1a2332] text-white px-2 py-1 rounded whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none border border-white/10">
+                <span className="absolute -top-9 left-1/2 -translate-x-1/2 text-[10px] font-semibold bg-bg-surface text-primary-accent px-2 py-1 rounded whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none border border-secondary-muted shadow-sm">
                   {label}
                 </span>
               </motion.a>
@@ -257,7 +249,7 @@ function Body() {
               href="#projects"
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.97 }}
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-neon-cyan text-bg-dark font-bold text-sm tracking-wide hover:bg-white transition-colors duration-300 shadow-[0_0_20px_rgba(0,242,254,0.3)]"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary-accent text-bg-surface font-bold text-sm tracking-wide hover:bg-neon-cyan transition-colors duration-300 shadow-lg shadow-primary-accent/20"
             >
               View My Work
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">

@@ -101,11 +101,11 @@ function CertModal({ item, onClose }) {
         exit={{ opacity: 0, scale: 0.92, y: 20 }}
         transition={{ duration: 0.3, ease: 'easeOut' }}
         onClick={(e) => e.stopPropagation()}
-        className="relative w-full max-w-4xl bg-[#0E1318] rounded-2xl border border-white/12 overflow-hidden shadow-2xl"
+        className="relative w-full max-w-4xl bg-bg-surface rounded-2xl border border-secondary-muted overflow-hidden shadow-2xl"
       >
-        <div className="flex items-center justify-between px-5 py-4 border-b border-white/8">
+        <div className="flex items-center justify-between px-5 py-4 border-b border-secondary-muted">
           <div>
-            <h3 className="text-sm font-bold text-white">{item.title}</h3>
+            <h3 className="text-sm font-bold text-primary-accent">{item.title}</h3>
             <p className="text-xs mt-0.5 font-semibold" style={{ color: item.accent }}>
               {item.subtitle}
             </p>
@@ -116,7 +116,7 @@ function CertModal({ item, onClose }) {
                 href={item.link}
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center gap-1.5 text-[11px] font-semibold text-neon-cyan hover:text-white transition-colors px-3 py-1.5 border border-neon-cyan/30 rounded-lg bg-neon-cyan/5 hover:bg-neon-cyan/10"
+                className="flex items-center gap-1.5 text-[11px] font-semibold text-neon-cyan hover:text-primary-accent transition-colors px-3 py-1.5 border border-neon-cyan/30 rounded-lg bg-neon-cyan/5 hover:bg-neon-cyan/10"
               >
                 <ExternalLink size={12} />
                 Verify Certificate
@@ -124,7 +124,7 @@ function CertModal({ item, onClose }) {
             )}
             <button
               onClick={onClose}
-              className="flex items-center justify-center w-8 h-8 rounded-lg border border-white/10 bg-white/5 text-slate-400 hover:text-white hover:bg-white/10 transition-all duration-200"
+              className="flex items-center justify-center w-8 h-8 rounded-lg border border-secondary-muted bg-bg-main text-text-muted hover:text-primary-accent hover:bg-secondary-muted/50 transition-all duration-200"
               aria-label="Close"
             >
               <X size={16} />
@@ -132,7 +132,7 @@ function CertModal({ item, onClose }) {
           </div>
         </div>
 
-        <div className="relative bg-[#050810] flex items-center justify-center p-6 md:p-10"
+        <div className="relative bg-bg-main flex items-center justify-center p-6 md:p-10"
           style={{ minHeight: '320px' }}
         >
           <img
@@ -143,7 +143,7 @@ function CertModal({ item, onClose }) {
           />
         </div>
 
-        <div className="flex flex-wrap items-center gap-4 px-5 py-3 border-t border-white/8 bg-white/[0.01]">
+        <div className="flex flex-wrap items-center gap-4 px-5 py-3 border-t border-secondary-muted bg-bg-main">
           <span className="flex items-center gap-1.5 text-[11px] text-slate-500">
             <Calendar size={11} />{item.date}
           </span>
@@ -171,9 +171,9 @@ function CertCard({ item, onOpen }) {
       variants={cardVariants}
       whileHover={{ scale: 1.03, boxShadow: `0 0 35px ${item.accent}20` }}
       onClick={() => onOpen(item)}
-      className="group flex flex-col bg-[#0E1318] rounded-xl overflow-hidden border border-white/8 hover:border-white/22 transition-all duration-300 cursor-pointer"
+      className="group flex flex-col bg-bg-surface rounded-xl overflow-hidden border border-secondary-muted hover:border-neon-cyan/40 transition-all duration-300 cursor-pointer shadow-sm"
     >
-      <div className="relative w-full bg-[#060A0D] overflow-hidden" style={{ aspectRatio: '16/10' }}>
+      <div className="relative w-full bg-secondary-muted/20 overflow-hidden" style={{ aspectRatio: '16/10' }}>
         <img
           src={item.image}
           alt={item.title}
@@ -181,10 +181,10 @@ function CertCard({ item, onOpen }) {
           loading="lazy"
         />
 
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0E1318]/70 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-bg-surface/90 via-transparent to-transparent" />
 
-        <div className="absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-[2px]">
-          <div className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white/10 border border-white/25 text-white text-xs font-semibold tracking-wide">
+        <div className="absolute inset-0 flex items-center justify-center bg-bg-main/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-[2px]">
+          <div className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-bg-surface border border-secondary-muted text-primary-accent text-xs font-semibold tracking-wide shadow-sm">
             <ZoomIn size={15} />
             View Certificate
           </div>
@@ -203,8 +203,8 @@ function CertCard({ item, onOpen }) {
         </div>
       </div>
 
-      <div className="px-4 py-3.5 border-t border-white/5 flex flex-col gap-1">
-        <h3 className="text-sm font-bold text-white group-hover:text-neon-cyan transition-colors duration-300 leading-snug">
+      <div className="px-4 py-3.5 border-t border-secondary-muted flex flex-col gap-1">
+        <h3 className="text-sm font-bold text-primary-accent group-hover:text-neon-cyan transition-colors duration-300 leading-snug">
           {item.title}
         </h3>
         <p className="text-[11px] font-semibold" style={{ color: item.accent }}>
@@ -229,9 +229,9 @@ function Certifications() {
   const [selected, setSelected] = useState(null)
 
   return (
-    <section id="certifications" className="py-24 md:py-36 bg-bg-dark border-t border-white/5 relative overflow-hidden">
+    <section id="certifications" className="py-24 md:py-36 bg-bg-main border-t border-secondary-muted relative overflow-hidden">
       <div
-        className="absolute inset-0 opacity-[0.015] pointer-events-none"
+        className="absolute inset-0 opacity-[0.05] pointer-events-none"
         style={{
           backgroundImage: 'linear-gradient(rgba(0,242,254,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(0,242,254,0.5) 1px, transparent 1px)',
           backgroundSize: '60px 60px'
@@ -246,10 +246,10 @@ function Certifications() {
           transition={{ duration: 0.7 }}
           className="text-center mb-20"
         >
-          <h2 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight inline-block mb-3">
+          <h2 className="text-4xl md:text-5xl font-extrabold text-primary-accent tracking-tight inline-block mb-3">
             Certifications<span className="text-neon-cyan">.</span>
           </h2>
-          <p className="text-muted-gray text-sm md:text-base font-normal max-w-xl mx-auto">
+          <p className="text-text-muted text-sm md:text-base font-normal max-w-xl mx-auto">
             Verified credentials from industry-leading programs — click any card to view the full certificate.
           </p>
         </motion.div>

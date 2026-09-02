@@ -28,7 +28,7 @@ function Footer() {
       name: 'GitHub',
       href: 'https://github.com/Leoul-Z',
       icon: <GithubIcon size={20} />,
-      accent: '#ffffff',
+      accent: '#0F172A',
       description: 'See my code & projects'
     },
     {
@@ -55,8 +55,8 @@ function Footer() {
   ]
 
   return (
-    <footer id="contact" className="py-24 md:py-32 relative bg-bg-dark border-t border-white/5 overflow-hidden">
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] rounded-full bg-neon-cyan/[0.03] blur-[100px] pointer-events-none" />
+    <footer id="contact" className="py-24 md:py-32 relative bg-bg-main border-t border-secondary-muted overflow-hidden">
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] rounded-full bg-neon-cyan/[0.05] blur-[100px] pointer-events-none" />
 
       <motion.div
         initial={{ opacity: 0 }}
@@ -72,10 +72,10 @@ function Footer() {
           transition={{ duration: 0.7 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight inline-block mb-3">
+          <h2 className="text-4xl md:text-5xl font-extrabold text-primary-accent tracking-tight inline-block mb-3">
             Contact<span className="text-neon-cyan">.</span>
           </h2>
-          <p className="text-muted-gray text-sm md:text-base font-normal">
+          <p className="text-text-muted text-sm md:text-base font-normal">
             Let's work together — reach out on any platform
           </p>
         </motion.div>
@@ -99,15 +99,15 @@ function Footer() {
                 boxShadow: `0 0 25px ${link.accent}20`
               }}
               whileTap={{ scale: 0.98 }}
-              className="group flex items-center justify-between p-5 rounded-xl border border-white/8 bg-white/[0.01] hover:border-white/20 transition-all duration-300 cursor-pointer"
+              className="group flex items-center justify-between p-5 rounded-xl border border-secondary-muted bg-bg-surface hover:border-neon-cyan/40 transition-all duration-300 cursor-pointer shadow-sm hover:shadow-md"
             >
               <div className="flex items-center gap-4">
                 <div
-                  className="w-10 h-10 rounded-lg flex items-center justify-center border border-white/10 bg-white/5 transition-all duration-300 group-hover:border-white/20"
+                  className="w-10 h-10 rounded-lg flex items-center justify-center border border-secondary-muted bg-bg-main transition-all duration-300 group-hover:border-neon-cyan/30"
                   style={{ '--link-accent': link.accent }}
                 >
                   <span
-                    className="text-slate-400 group-hover:text-[var(--link-accent)] transition-colors duration-300"
+                    className="text-text-muted group-hover:text-[var(--link-accent)] transition-colors duration-300"
                     style={{ '--link-accent': link.accent }}
                   >
                     {link.icon}
@@ -115,7 +115,7 @@ function Footer() {
                 </div>
 
                 <div>
-                  <span className="block text-sm font-semibold text-white tracking-wide">
+                  <span className="block text-sm font-semibold text-primary-accent tracking-wide">
                     {link.name}
                   </span>
                   <span className="block text-[11px] text-slate-500 mt-0.5">
@@ -142,12 +142,12 @@ function Footer() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="w-full text-center border-t border-white/5 pt-10"
+          className="w-full text-center border-t border-secondary-muted pt-10"
         >
           <p className="text-xs md:text-sm text-slate-500 font-medium">
             © 2026 Leoul Zerihun — Built with{' '}
-            <span className="text-neon-cyan/70">React</span> &{' '}
-            <span className="text-neon-cyan/70">Tailwind CSS</span>
+            <span className="text-neon-cyan">React</span> &{' '}
+            <span className="text-neon-cyan">Tailwind CSS</span>
           </p>
         </motion.div>
       </motion.div>

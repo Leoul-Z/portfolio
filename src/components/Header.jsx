@@ -30,14 +30,14 @@ function Header() {
     <header 
       className={`sticky top-0 z-50 w-full transition-all duration-300 ${
         scrolled 
-          ? 'bg-bg-dark/90 backdrop-blur-md border-b border-white/10 py-4 shadow-lg' 
-          : 'bg-bg-dark/50 backdrop-blur-sm border-b border-transparent py-6'
+          ? 'bg-bg-main/90 backdrop-blur-md border-b border-secondary-muted py-4 shadow-lg' 
+          : 'bg-bg-main/50 backdrop-blur-sm border-b border-transparent py-6'
       }`}
     >
       <div className="max-w-6xl mx-auto px-6 flex items-center justify-between">
         <a 
           href="#home" 
-          className="text-2xl font-bold tracking-tight text-white flex items-center hover:opacity-90 transition-opacity"
+          className="text-2xl font-bold tracking-tight text-primary-accent flex items-center hover:opacity-90 transition-opacity"
         >
           Leoul<span className="text-neon-cyan ml-1">/</span>
         </a>
@@ -50,7 +50,7 @@ function Header() {
                   href={link.href}
                   target={link.isExternal ? "_blank" : undefined}
                   rel={link.isExternal ? "noreferrer" : undefined}
-                  className="relative text-sm font-medium text-muted-gray hover:text-white transition-colors duration-200 pb-1 after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[2px] after:bg-neon-cyan after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left"
+                  className="relative text-sm font-medium text-text-muted hover:text-primary-accent transition-colors duration-200 pb-1 after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[2px] after:bg-neon-cyan after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left"
                 >
                   {link.name}
                 </a>
@@ -61,7 +61,7 @@ function Header() {
 
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden text-white hover:text-neon-cyan transition-colors focus:outline-none p-1"
+          className="md:hidden text-primary-accent hover:text-neon-cyan transition-colors focus:outline-none p-1"
           aria-label="Toggle menu"
         >
           {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -75,7 +75,7 @@ function Header() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.2 }}
-            className="md:hidden bg-bg-dark/95 border-b border-white/10 overflow-hidden"
+            className="md:hidden bg-bg-main/95 border-b border-secondary-muted overflow-hidden"
           >
             <nav className="px-6 py-6 flex flex-col gap-4">
               {navLinks.map((link) => (
@@ -85,7 +85,7 @@ function Header() {
                   target={link.isExternal ? "_blank" : undefined}
                   rel={link.isExternal ? "noreferrer" : undefined}
                   onClick={() => setIsOpen(false)}
-                  className="text-lg font-medium text-muted-gray hover:text-white hover:text-neon-cyan transition-colors duration-200 py-2 border-b border-white/5"
+                  className="text-lg font-medium text-text-muted hover:text-primary-accent transition-colors duration-200 py-2 border-b border-secondary-muted"
                 >
                   {link.name}
                 </a>
